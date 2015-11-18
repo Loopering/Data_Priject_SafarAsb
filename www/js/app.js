@@ -130,7 +130,34 @@ app.controller('starter',function($scope) {
       }
     }
   }
-
+  var k=0;
+  $scope.show = new Array(8)
+  for(var i=0;i<8;i++) {
+    $scope.show[i] = new Array(8);
+    for(var j=0;j<8;j++)
+      $scope.show[i][j] = 0;
+  }
+  var reset_play = function () {
+    for(var i=0;i<8;i++) {
+      for(var j=0;j<8;j++)
+        $scope.show[i][j] = 0;
+    }
+  }
+  $scope.play = function()
+  {
+    for(var i=0;i<8;i++)
+      for(var j=0;j<8;j++)
+      {
+        if($scope.a[i][j] == k)
+        {
+          //reset_play();
+          console.log("rrr" + i + " " + j + k);
+          $scope.show[i][j]=1;
+          k+=1;
+          return;
+        }
+      }
+  }
 
   //------------------------------------------------
 
